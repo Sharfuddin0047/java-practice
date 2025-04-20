@@ -44,6 +44,23 @@ public class Strings {
         }
         return subStr;
     }
+
+    public static String compress(String str){
+        String newStr ="";
+        for(int i=0; i<str.length(); i++){
+            Integer count = 1;
+            while(i<str.length()-1 && str.charAt(i) == str.charAt(i+1)){
+                count ++;
+                i++;
+            }
+            newStr += str.charAt(i);
+            if(count >1 ){
+                newStr += count.toString();
+            }
+        }
+        return newStr;
+    }
+
     public static void main(String[] args) {
         char arr[] = {'a','b','c','d'};
         String str1 ="abcd";
@@ -71,14 +88,24 @@ public class Strings {
         // System.out.println(subString(str, si, ei));
 
 
-        String fruits[] ={"apple","banana","mango"};
-        String largest = fruits[0];
-        for(int i=1; i<fruits.length;i++){
-            if(largest.compareTo(fruits[i])<0){
-                largest = fruits[i];
-            }
-        }
-        System.out.println(largest);
+        // String fruits[] ={"apple","banana","mango"};
+        // String largest = fruits[0];
+        // for(int i=1; i<fruits.length;i++){
+        //     if(largest.compareTo(fruits[i])<0){ 
+        //         largest = fruits[i];
+        //     }
+        // }
+        // System.out.println(largest);
+
+        // StringBuilder sb = new StringBuilder("");
+        // for(char ch='a'; ch<='z'; ch++){
+        //     sb.append(ch);
+        // }
+        // System.out.println(sb);
+
+
+        String str = "aaabbcccdd";
+        System.out.println(compress(str));
 
     }
     
