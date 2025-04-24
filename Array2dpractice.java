@@ -27,7 +27,7 @@ public class Array2dpractice {
     // Write a program to FindTransposeofa Matrix.
 
     public static void transpose(int arr[][]){
-        int tp[][] = new int[arr.length][arr[0].length];
+        int tp[][] = new int[arr[0].length][arr.length];
 
         for(int i=0; i<arr.length; i++){
             for(int j=0; j<arr[0].length; j++){
