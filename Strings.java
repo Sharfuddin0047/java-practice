@@ -104,8 +104,10 @@ public class Strings {
         // System.out.println(sb);
 
 
-        String str = "aaabbcccdd";
-        System.out.println(compress(str));
+        // String str = "aaabbcccdd";
+        // System.out.println(compress(str));
+
+        
 
     }
     
