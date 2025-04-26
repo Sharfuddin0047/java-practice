@@ -7,12 +7,9 @@ public class OOPS {
         System.out.println(p1.getTip());
         p1.setColor("Yellow");
         System.out.println(p1.getColor());
-        Student s1 = new Student("xyz");
-        System.out.println(s1.name);
-
-       
-        
-
+        Student s1 = new Student();
+        Student s2 = new Student("xyz");
+        Student s3 = new Student(444);
     }
     
 }
@@ -20,8 +17,15 @@ public class OOPS {
 class Student{
     String name;
     int roll;
+
+    Student(){
+        System.out.println("constructor is called...");
+    }
     Student(String name){
         this.name = name;
+    }
+    Student(int roll){
+        this.roll = roll;
     }
 }
 
