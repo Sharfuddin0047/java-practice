@@ -7,13 +7,22 @@ public class OOPS {
         System.out.println(p1.getTip());
         p1.setColor("Yellow");
         System.out.println(p1.getColor());
-
+        Student s1 = new Student("xyz");
+        System.out.println(s1.name);
 
        
         
 
     }
     
+}
+
+class Student{
+    String name;
+    int roll;
+    Student(String name){
+        this.name = name;
+    }
 }
 
 class pen {
