@@ -8,8 +8,24 @@ public class OOPS {
         p1.setColor("Yellow");
         System.out.println(p1.color);
 
+
+        BankAccount myAcc = new BankAccount();
+        myAcc.username = "abc";
+        myAcc.setPassword("xyz");
+        // System.out.println(myAcc.username);
+        
+
     }
     
+}
+class BankAccount {
+    public String username;
+    private String password;
+    public void setPassword(String pwd){
+        password = pwd;
+        // System.out.println(password);
+    }
+
 }
 class pen {
     String color;
