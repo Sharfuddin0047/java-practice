@@ -1,8 +1,12 @@
 public class OOPS {
     public static void main(String[] args) {
 
-        Fish shark = new Fish();
-        shark.eat();
+        // Fish shark = new Fish();
+        // shark.eat();
+
+        Dog dobby = new Dog();
+        dobby.legs=4;
+        System.out.println(dobby.legs);
 
 
         // pen p1 = new pen(); //object p1
@@ -50,14 +54,23 @@ class Animal{
     }
 }
 
-// Derived class
-class Fish extends Animal{
-    int fins;
 
-    void swim(){
-        System.out.println("swims in water");
-    }
+class Mammal extends Animal {
+    int legs; 
 }
+
+class Dog extends Mammal{
+    String breed;
+}
+
+// Derived class
+// class Fish extends Animal{
+//     int fins;
+
+//     void swim(){
+//         System.out.println("swims in water");
+//     }
+// }
 
 
 
