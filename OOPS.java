@@ -56,12 +56,23 @@ class Animal{
 
 
 class Mammal extends Animal {
-    int legs; 
+    void walk(){
+        System.out.println("walks");
+    }
 }
 
-class Dog extends Mammal{
-    String breed;
+class Fish extends Animal{
+   void swim(){
+    System.out.println("swim");
+   } 
 }
+
+class Bird extends Animal{
+    void fly(){
+        System.out.println("fly");
+    }
+}
+
 
 // Derived class
 // class Fish extends Animal{
