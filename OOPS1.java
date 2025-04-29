@@ -21,8 +21,24 @@ public class OOPS1 {
         // h.eat();
         // h.walks();
 
-        Mustang myHorse = new Mustang();
+        // Mustang myHorse = new Mustang();
         
+        // interfaces
+        // Queen q = new Queen();
+        // q.moves();
+
+
+        // static
+        // Student s1 = new Student();
+        // s1.schoolName = "abc";
+
+        // Student s2 = new Student();
+        // System.out.println(s2.schoolName);
+
+        // super 
+        Horse h = new Horse();
+        System.out.println(h.color);
+
     }
     
 }
@@ -66,42 +82,111 @@ public class OOPS1 {
  * can have constructors
   */
 
-  abstract class Animal{
+//   abstract class Animal{
+//     String color;
+//     Animal(){
+//         System.out.println("Animal constructor called....");
+//     }
+
+//     void eat(){
+//         System.out.println("Animal eats");
+//     }
+//     abstract void walks();
+
+//   }
+
+//   class Horse extends Animal{
+//     Horse(){
+//         System.out.println("Horse constructor called... ");
+//     }
+//     void changeColor(String color){
+//         color = "dark brown";
+//     }
+//     void walks(){
+//         System.out.println("walks on 4 legs");
+//     }
+// }
+
+// class Mustang extends Horse{
+//     Mustang(){
+//         System.out.println("Mustang constructor called....");
+//     }
+// }
+
+// class Chicken extends Animal{
+//     void changeColor(){
+//         color = " yellow";
+//     }
+//     void walks(){
+//         System.out.println("Walks on 2 legs");
+//     }
+// }
+
+
+
+/*Interfaces
+ * All methods are public ,abstract & without implementation
+ * Used to achieve total abstraction
+ * Variables in the interfaces are final ,public and static
+ */
+
+//  interface ChessPlayer{
+//     void moves();
+//  }
+//  class Queen implements ChessPlayer{
+//     public void moves(){
+//         System.out.println("up,down, left , right, diagonal (in all 4 dir)");
+//     }
+//  }
+
+//  class Rook implements ChessPlayer{
+//     public void moves(){
+//         System.out.println("up,down, left , right");
+//     }
+//  }
+
+//  class King implements ChessPlayer{
+//     public void moves(){
+//         System.out.println("up,down, left , right ,diagonal ( by 1 step)");
+//     }
+//  }
+
+/*Static keyword
+ * static keyword in java is used to share the same variable or method of a given class
+ * Properties
+ * Functions
+ * Blocks
+ * Nestedclasses
+ */
+//  class Student{
+//     String name;
+//     int roll;
+//     Static String schoolName;
+
+//     void setName(String name){
+//         this.name = name;
+//     }
+//     String getName(){
+//         return this.name;
+//     }
+//  }
+
+ /*Super keyword
+  * super keyword is used to refer immediate parent class object.
+  *to access parent properties,functions,constructors
+  */
+class Animal{
     String color;
     Animal(){
-        System.out.println("Animal constructor called....");
+        System.out.println("animal constructor is called");
     }
-
-    void eat(){
-        System.out.println("Animal eats");
-    }
-    abstract void walks();
-
-  }
-
-  class Horse extends Animal{
+}
+class Horse extends Animal{
     Horse(){
-        System.out.println("Horse constructor called... ");
-    }
-    void changeColor(String color){
-        color = "dark brown";
-    }
-    void walks(){
-        System.out.println("walks on 4 legs");
+        super.color = "brown";
+        
+        System.out.println("horse constructor is called");
     }
 }
 
-class Mustang extends Horse{
-    Mustang(){
-        System.out.println("Mustang constructor called....");
-    }
-}
 
-class Chicken extends Animal{
-    void changeColor(){
-        color = " yellow";
-    }
-    void walks(){
-        System.out.println("Walks on 2 legs");
-    }
-}
