@@ -27,13 +27,23 @@ public class RecursionBasics {
     //     return fn;
     // }
 
-      public static int calcSum(int n){
-        if(n==1){
-            return 1;
-        }
-        int sum = n + calcSum(n-1);
-        return sum;
+      // public static int calcSum(int n){
+      //   if(n==1){
+      //       return 1;
+      //   }
+      //   int sum = n + calcSum(n-1);
+      //   return sum;
+      // }
+
+
+    //  find nth fibonacci
+    public static int nthfibo(int n){
+      if(n<=1){
+        return 1;
       }
+      int fib = nthfibo(n-1) + nthfibo(n-2);
+      return fib;
+    }
 
 
     public static void main(String[] args) {
@@ -44,7 +54,11 @@ public class RecursionBasics {
 
        // System.out.println(fact(5));
 
-       System.out.println(calcSum(5));
+      // System.out.println(calcSum(5));
+
+
+     //nth fibo
+     System.out.println(nthfibo(75));
     }
     
 }
