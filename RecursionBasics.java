@@ -46,6 +46,18 @@ public class RecursionBasics {
     }
 
 
+    public static boolean isSortedArray(int num[],int i){
+      if(num[i] == num.length-1){
+        return true;
+      }
+      else if(num[i] > num[i+1]){
+        return false;
+
+      }
+      return isSortedArray(num,i+1);
+      
+    }
+
     public static void main(String[] args) {
         // int n = 10;
         // printDec(n);
@@ -58,7 +70,11 @@ public class RecursionBasics {
 
 
      //nth fibo
-     System.out.println(nthfibo(25));
+    //  System.out.println(nthfibo(25));
+
+
+    int num[] = {1,2,3,7,5};
+    System.out.println(isSortedArray(num, 0));
     }
     
 }
