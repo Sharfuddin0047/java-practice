@@ -39,7 +39,7 @@ public class RecursionBasics {
     //  find nth fibonacci
     public static int nthfibo(int n){
       if(n<=1){
-        return 1;
+        return n;
       }
       int fib = nthfibo(n-1) + nthfibo(n-2);
       return fib;
@@ -58,7 +58,7 @@ public class RecursionBasics {
 
 
      //nth fibo
-     System.out.println(nthfibo(75));
+     System.out.println(nthfibo(25));
     }
     
 }
