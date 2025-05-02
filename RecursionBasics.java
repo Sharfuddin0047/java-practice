@@ -86,6 +86,19 @@ public class RecursionBasics {
       int xn = x*pow(x, n-1);
       return xn;
     }
+
+    public static int optimizedPower(int x,int n){
+      if(n == 0){
+        return 1;
+      }
+      int pow = optimizedPower(x, n/2);
+      int powsq = pow * pow;
+      if(n % 2 != 0){
+        powsq = x*powsq;
+      }
+      return powsq;
+    }
+
     public static void main(String[] args) {
         // int n = 10;
         // printDec(n);
@@ -113,8 +126,9 @@ public class RecursionBasics {
     //System.out.println(lastOccurence(arr, j, target));
 
     int x = 2;
-    int n = 100;
-    System.out.println(pow(x, n));
+    int n = 10;
+    //System.out.println(pow(x, n));
+    System.out.println(optimizedPower(x, n));
     }
     
 }
