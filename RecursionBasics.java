@@ -78,6 +78,14 @@ public class RecursionBasics {
       return lastOccurence(arr, j-1, target);
     }
 
+
+    public static int pow(int x,int n){
+      if(n==1){
+        return 1;
+      }
+      int xn = x*pow(x, n-1);
+      return xn;
+    }
     public static void main(String[] args) {
         // int n = 10;
         // printDec(n);
@@ -102,7 +110,11 @@ public class RecursionBasics {
     int i = 0;
     int j = arr.length -1;
     //System.out.println(firstOccurence(arr, i, target));
-    System.out.println(lastOccurence(arr, j, target));
+    //System.out.println(lastOccurence(arr, j, target));
+
+    int x = 2;
+    int n = 100;
+    System.out.println(pow(x, n));
     }
     
 }
