@@ -58,6 +58,16 @@ public class RecursionBasics {
       
     }
 
+    public static int firstOccurence(int arr[],int i,int target){
+      if(i==arr.length){
+        return -1;
+      }
+      else if(arr[i] == target){
+        return i;
+      }
+      return firstOccurence(arr, i+1, target);
+    }
+
     public static void main(String[] args) {
         // int n = 10;
         // printDec(n);
@@ -73,8 +83,14 @@ public class RecursionBasics {
     //  System.out.println(nthfibo(25));
 
 
-    int num[] = {1,2,3,7,5};
-    System.out.println(isSortedArray(num, 0));
+    // int num[] = {1,2,3,7,5};
+    // System.out.println(isSortedArray(num, 0));
+
+    // firstOccurence
+    int arr[] = {1,4,34,67,54,34,45};
+    int target = 45;
+    int i = 0;
+    System.out.println(firstOccurence(arr, i, target));
     }
     
 }
