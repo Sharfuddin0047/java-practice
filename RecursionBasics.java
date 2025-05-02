@@ -68,6 +68,16 @@ public class RecursionBasics {
       return firstOccurence(arr, i+1, target);
     }
 
+    public static int lastOccurence(int arr[], int j,int target){
+      if(j<0){
+        return -1;
+      }
+      else if(arr[j] == target){
+        return j;
+      }
+      return lastOccurence(arr, j-1, target);
+    }
+
     public static void main(String[] args) {
         // int n = 10;
         // printDec(n);
@@ -87,10 +97,12 @@ public class RecursionBasics {
     // System.out.println(isSortedArray(num, 0));
 
     // firstOccurence
-    int arr[] = {1,4,34,67,54,34,45};
-    int target = 45;
+    int arr[] = {1,45,34,67,54,34,45};
+    int target = 467;
     int i = 0;
-    System.out.println(firstOccurence(arr, i, target));
+    int j = arr.length -1;
+    //System.out.println(firstOccurence(arr, i, target));
+    System.out.println(lastOccurence(arr, j, target));
     }
     
 }
