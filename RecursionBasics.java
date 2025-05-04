@@ -133,7 +133,26 @@ public class RecursionBasics {
       }
     }
 
+    public static int friendsPairing(int n){
+      if(n == 1 || n == 2){
+        return n;
+      }
+      //choice
+      //single
+      // int fnm1 = friendsPairing(n-1);
 
+      // //pair
+      // int fnm2 = friendsPairing(n-2);
+      // int pairWays = (n-1)*fnm2;
+
+      // //totways
+      // int totways = fnm1 + pairWays;
+      // return totways;
+
+
+      //another way 
+      return friendsPairing(n-1)+(n-1)*friendsPairing(n-2);
+    }
     public static void main(String[] args) {
         // int n = 10;
         // printDec(n);
@@ -168,8 +187,9 @@ public class RecursionBasics {
 
 
 
-    String str = "appnnacollege";
-    remDup(str, 0, new StringBuilder(""), new boolean[26]);
+    // String str = "appnnacollege";
+    // remDup(str, 0, new StringBuilder(""), new boolean[26]);
+    System.out.println(friendsPairing(n));
     }
     
 }
