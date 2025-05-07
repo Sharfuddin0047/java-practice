@@ -153,6 +153,23 @@ public class RecursionBasics {
       //another way 
       return friendsPairing(n-1)+(n-1)*friendsPairing(n-2);
     }
+
+     public static void printBinStrings(int n,int lastPlace, String str){
+      //kaam
+
+      if(n==0){
+        System.out.println(str);
+        return;
+      }
+      if(lastPlace == 0){
+        //sit 0 on chair n
+        printBinStrings(n-1, 0, str+"0");
+        printBinStrings(n-1, 1, str+"1");
+      }else{
+        printBinStrings(n-1, 0, str+"0");
+      }
+     }
+
     public static void main(String[] args) {
         // int n = 10;
         // printDec(n);
@@ -189,7 +206,8 @@ public class RecursionBasics {
 
     // String str = "appnnacollege";
     // remDup(str, 0, new StringBuilder(""), new boolean[26]);
-    System.out.println(friendsPairing(n));
+    //System.out.println(friendsPairing(n));
+    printBinStrings(3, 0, "");
     }
     
 }
