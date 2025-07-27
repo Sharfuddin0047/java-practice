@@ -1,19 +1,22 @@
 public class Nqueens {
-    public static void nQueens(char board[][],int row){
+    public static boolean nQueens(char board[][],int row){
         //base
         if(row == board.length){
-            printBoard(board);
+            //printBoard(board);
             a++;
-            return;
+            return true;
         }
         //column loop
         for(int j=0; j<board.length; j++){
             if(isSafe(board, row, j)){
                 board[row][j] = 'Q';
-                nQueens(board, row+1); //function call
+                if(nQueens(board, row+1)){
+                    return true;
+                } //function call
                 board[row][j] = '.'; //backtracking step
             }
         }
+        return false;
     }
 
     public static boolean isSafe(char board[][], int row, int col){
@@ -61,8 +64,13 @@ public class Nqueens {
                 board[i][j] = '.';
             }
         }
-        nQueens(board, 0);
-        System.out.println("Total ways to solve n queen problem is : " +a);
+        if(nQueens(board, 0)){
+            System.out.println("Solution is possible");
+            printBoard(board);
+        }else{
+            System.out.println("Solution is not possible");
+        }
+        //System.out.println("Total ways to solve n queen problem is : " +a);
     }
     
 }
