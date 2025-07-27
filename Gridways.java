@@ -18,3 +18,5 @@ public class Gridways {
     }
     
 }
+
+//direct formula total ways= (n-1+m-1)/(n-1)!*(m-1)!)
