@@ -32,5 +32,29 @@ public class Arraylist {
         //contains
         // System.out.println(list.contains(1));
         // System.out.println(list.contains(11));
+
+        System.out.println(list.size());
+
+        //print the arraylist
+        for(int i=0; i<list.size(); i++){
+            System.out.print(list.get(i)+ " ");
+
+        }
+        System.out.println();
+
+        // Reverse print
+        for(int i=list.size()-1; i>=0; i--){
+            System.out.print(list.get(i)+ " ");
+        }
+        System.out.println();
+
+        int max = Integer.MIN_VALUE;
+        for(int i=0; i<list.size(); i++){
+            // if(max<list.get(i)){
+            //     max = list.get(i);
+            // }
+            max = Math.max(max,list.get(i));
+        }
+        System.out.println("max is : "+max);
     }
 }
