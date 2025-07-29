@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Arraylist {
     public static void swap(ArrayList<Integer> list, int idx1, int idx2){
@@ -20,10 +21,18 @@ public class Arraylist {
 
         list.add(1,9);
 
-        int idx1 = 1, idx2 = 3;
         System.out.println(list);
-        swap(list,idx1,idx2);
+        Collections.sort(list);  //ascending
         System.out.println(list);
+
+        //descending
+        Collections.sort(list, Collections.reverseOrder());
+        System.out.println(list);
+
+        // int idx1 = 1, idx2 = 3;
+        // System.out.println(list);
+        // swap(list,idx1,idx2);
+        // System.out.println(list);
 
         //Get operation
         // int element = list.get(2);
