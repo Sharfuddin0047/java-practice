@@ -155,7 +155,7 @@ public class LinkedList {
         while(curr != null){
             next = curr.next;
             curr.next = prev;
-            prev = curr;
+            prev = curr;0
             curr = next;
         }
         head = prev;
