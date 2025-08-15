@@ -155,7 +155,7 @@ public class LinkedList {
         while(curr != null){
             next = curr.next;
             curr.next = prev;
-            prev = curr;0
+            prev = curr;
             curr = next;
         }
         head = prev;
@@ -234,6 +234,21 @@ public class LinkedList {
         }
         return true;
     }
+    // check cycle exist in the linked list or not
+    public boolean isCycle(){
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(slow == fast){
+                return true;
+            }
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
@@ -271,7 +286,8 @@ public class LinkedList {
 
         ll.print();
         System.out.println(ll.checkPalindrome());
-
+         
+        System.out.println(ll.isCycle());
 
     }
 }
