@@ -27,6 +27,19 @@ public class DoubleLL {
             head = newNode;
         }
 
+        public void addLast(int data) {
+            Node newNode = new Node(data);
+            size++;
+            if(head == null){
+                head = tail = newNode;
+                return;
+            }
+            
+            tail.next = newNode;
+            newNode.prev = tail;
+            tail = newNode;
+        }
+
         //print
         public void print() {
             Node temp = head;
@@ -56,6 +69,30 @@ public class DoubleLL {
             size--;
             return val;
         }
+
+        public int removeLast() {
+            Node curr = head;
+            Node prev = null;
+            if(head == null) {
+                System.out.println("DLL is empty");
+                return Integer.MIN_VALUE;
+            }
+            if(head.next == null){
+                int val = head.data;
+                head = tail = null;
+                size--;
+                return val;
+            }
+            while(curr.next != null){
+                prev = curr;
+                curr = curr.next;
+            }
+            int val = curr.data;
+            prev.next = null;
+            tail = prev;
+            size--;
+            return val;
+        }
     public static void main(String[] args) {
         DoubleLL dll = new DoubleLL();
         dll.addFirst(1);
@@ -64,6 +101,11 @@ public class DoubleLL {
         dll.addFirst(4);
         dll.print();
         dll.removeFirst();
+        dll.print();
+        dll.removeLast();
+        dll.print();
+
+        dll.addLast(5);
         dll.print();
     }
 }
