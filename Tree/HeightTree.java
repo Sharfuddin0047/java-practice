@@ -18,6 +18,16 @@ public class HeightTree {
             int rh = height(root.right);
             return Math.max(lh,rh) + 1;
         }
+
+        public static int count(Node root) {
+            if(root == null) {
+                return 0;
+            }
+
+            int lc = count(root.left);
+            int rc = count(root.right);
+            return lc + rc +1;
+        }
     public static void main(String[] args){
         /*
          *         1
@@ -35,6 +45,7 @@ public class HeightTree {
          root.left.right = new Node(6);
          root.right.right = new Node(7);
 
-         System.out.print(height(root));
+         System.out.println(height(root));
+         System.out.println(count(root));
     }
 }
