@@ -34,6 +34,22 @@ public class MirrorBst {
         preorder(root.right);
     }
 
+    public static void printInRange(Node root, int k1, int k2) {
+        if(root == null) {
+            return;
+        }
+        if(root.data >= k1 && root.data <= k2) {
+            printInRange(root.left, k1, k2);
+            System.out.print(root.data+" ");
+            printInRange(root.right, k1, k2);
+        }
+        else if(root.data < k1) {
+            printInRange(root.left, k1, k2);
+        }
+        else {
+            printInRange(root.right, k1, k2);
+        }
+    }
     public static void main(String[] args) {
         Node root = new Node(8);
         root.left = new Node(5);
@@ -42,9 +58,10 @@ public class MirrorBst {
         root.left.right = new Node(6);
         root.right.right = new Node(11);
 
-        root = createMirror(root);
-        preorder(root);
+        // root = createMirror(root);
+        // preorder(root);
 
+        printInRange(root, 5, 12);
     }
 
 }
