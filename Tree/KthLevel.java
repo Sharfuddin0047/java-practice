@@ -115,6 +115,28 @@ public class KthLevel {
 
         return dist1 + dist2;
     }
+
+    public static int KAncestor(Node root, int n, int k) {
+        if(root == null) {
+            return -1;
+        }
+        if(root.data == n) {
+            return 0;
+        }
+
+        int leftDist = KAncestor(root.left, n, k);
+        int rightDist = KAncestor(root.right, n, k);
+
+        if(leftDist == -1 && rightDist == -1) {
+            return -1;
+        }
+        int max = Math.max(leftDist, rightDist);
+        if(max+1 == k) {
+                System.out.println(root.data);
+            } 
+        return max +1;
+    }
+    
     public static void main(String[] args) {
         Node root = new Node(1);
         root.left = new Node(2);
@@ -130,7 +152,10 @@ public class KthLevel {
         // int n1 =2;
         // int n2=5;
         // System.out.println(lca(root, n1, n2).data);
-        int n1 = 4, n2 = 6;
-        System.out.println(minDst(root, n1, n2));
+        // int n1 = 4, n2 = 6;
+        // System.out.println(minDst(root, n1, n2));
+
+        int n=5, k=2;
+        KAncestor(root, n, k);
     }
 }
